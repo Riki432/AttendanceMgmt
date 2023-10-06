@@ -5,6 +5,12 @@ page 50100 Students
     PageType = List;
     SourceTable = Students;
     UsageCategory = Lists;
+    CardPageId = "Student Card";
+    ModifyAllowed = false;
+    DeleteAllowed = true;
+    InsertAllowed = true;
+
+
 
     layout
     {
@@ -16,7 +22,6 @@ page 50100 Students
                 {
                     ToolTip = 'Specifies the value of the Student ID field.';
                     Editable = false;
-                    Visible = false;
                 }
                 field("Student Name"; Rec."Student Name")
                 {
@@ -42,6 +47,30 @@ page 50100 Students
                 {
                     ToolTip = 'Specifies the value of the Attendance Count field.';
                 }
+                field("Student Image"; Rec."Student Image")
+                {
+
+                }
+            }
+        }
+    }
+
+    actions
+    {
+        area(Processing)
+        {
+            action("Sample Processing")
+            {
+                ApplicationArea = All;
+                Image = Properties;
+                Scope = Repeater;
+                // Enabled = false;
+                // Visible = false;
+
+                trigger OnAction()
+                begin
+
+                end;
             }
         }
     }

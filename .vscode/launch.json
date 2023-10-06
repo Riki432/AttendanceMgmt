@@ -8,12 +8,15 @@
             "environmentType": "Sandbox",
             "environmentName": "Advait",
             "tenant": "0e66fd39-adce-4a4f-a39f-c8c723d40ff0",
-            "startupObjectId": 22,
+            "startupObjectId": 50100,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "Synchronize", 
+            // "schemaUpdateMode": "Recreate",
+            // "schemaUpdateMode": "ForceSync",
         }
     ]
 }
