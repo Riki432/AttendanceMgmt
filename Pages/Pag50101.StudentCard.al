@@ -47,6 +47,12 @@ page 50101 "Student Card"
                     ToolTip = 'Specifies the value of the Student Image field.';
                 }
             }
+
+            part(Attendance; Attendance)
+            {
+                ApplicationArea = All;
+                SubPageLink = "Student ID" = field("Student ID");
+            }
         }
     }
 

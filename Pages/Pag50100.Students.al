@@ -74,4 +74,64 @@ page 50100 Students
             }
         }
     }
+
+    trigger OnInit()
+    begin
+        Message('OnInit');
+    end;
+
+    trigger OnOpenPage()
+    begin
+        Message('OnOpenPage');
+    end;
+
+    // trigger OnFindRecord(Which: Text): Boolean
+    // begin
+    //     Message('OnFindRecord');
+    // end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        Message('OnNewRecord');
+    end;
+
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+    begin
+        Message('OnInsertRecord');
+    end;
+
+    trigger OnModifyRecord(): Boolean
+    begin
+        Message('OnModifyRecord');
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        Message('OnDeleteRecord');
+    end;
+
+    trigger OnNextRecord(Steps: Integer): Integer
+    begin
+        Message('OnNextRecord');
+    end;
+
+    trigger OnAfterGetCurrRecord()
+    begin
+        Message('OnAfterGetCurrRecord');
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        Message('OnAfterGetRecord');
+    end;
+
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    begin
+        Message('OnQueryClosePage');
+    end;
+
+    trigger OnClosePage()
+    begin
+        Message('OnClosePage');
+    end;
 }
