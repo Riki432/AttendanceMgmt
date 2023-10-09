@@ -15,23 +15,24 @@ table 50101 Attendances
             Caption = 'Student ID';
             TableRelation = Students."Student ID";
 
-            trigger OnValidate()
-            var
-                Rec_Students: Record Students;
-            begin
-                Clear(Rec_Students);
-                Rec_Students.Reset();
-                Rec_Students.SetRange("Student ID", Rec."Student ID");
-                if Rec_Students.FindFirst() then
-                    Rec.Validate("Student Name", Rec_Students."Student Name");
+            // trigger OnValidate()
+            // var
+            //     Rec_Students: Record Students;
+            // begin
+            //     Clear(Rec_Students);
+            //     Rec_Students.Reset();
+            //     Rec_Students.SetRange("Student ID", Rec."Student ID");
+            //     if Rec_Students.FindFirst() then
+            //         Rec.Validate("Student Name", Rec_Students."Student Name");
 
-            end;
+            // end;
         }
 
         field(50002; "Student Name"; Text[100])
         {
             Caption = 'Student Name';
-            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup(Students."Student Name" where("Student ID" = field("Student ID")));
         }
         field(50003; "Start Time"; Time)
         {
